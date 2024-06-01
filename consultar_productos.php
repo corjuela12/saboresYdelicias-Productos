@@ -21,7 +21,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Consultar productos</title>
+    <title>Consultar Productos</title>
 
     <!-- Custom fonts for this template -->
     <link href="icons/font/bootstrap-icons.min.css" rel="stylesheet" type="text/css">
@@ -320,7 +320,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <td><?php echo $dat['nombre'] ?></td>
                                             <td><?php echo $dat['marca'] ?></td>
                                             <td><?php echo $dat['precio_compra'] ?></td>
-                                            <td><?php echo $dat['img'] ?></td>
+                                            <td><img src="<?php echo $dat['img'] ?>"> </img></td>
                                             <td><?php echo $dat['precio_venta'] ?></td>
                                             <td><?php echo $dat['categoria'] ?></td>
                                             <td><?php echo $dat['descripcion'] ?></td>
