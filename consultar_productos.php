@@ -112,6 +112,15 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <a class="nav-link" href="#">
                     <i class="bi bi-person-fill-lock"></i>
                     <span>Empleados</span></a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <!--<h6 class="collapse-header">Custom Utilities:</h6>-->
+                        <a class="collapse-item" href="utilities-color.html">Crear Empleado</a>
+                        <a class="collapse-item" href="utilities-border.html">Consultar Empleado</a>
+                        <a class="collapse-item" href="utilities-animation.html">Modificar Empleado</a>
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - venta -->
@@ -140,6 +149,14 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <a class="nav-link" href="#">
                     <i class="bi bi-calendar3"></i>
                     <span>Tienda</span></a>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <!--<h6 class="collapse-header">Custom Components:</h6>-->
+                        <a class="collapse-item" href="">Crear tienda</a>
+                        <a class="collapse-item" href="">Consultar Tienda</a>
+                        <a class="collapse-item" href="">Modificar Tienda</a>
+                    </div>
+                </div>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
