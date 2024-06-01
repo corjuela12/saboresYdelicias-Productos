@@ -277,6 +277,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <th>Precio venta</th>
                                             <th>Categoria</th>
                                             <th>Descripción</th>
+                                            <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tfoot class="text-center">
@@ -289,6 +290,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <th>Precio Venta</th>
                                             <th>Categoria</th>
                                             <th>Descripción</th>
+                                            <th>Acciones</th>
 
                                         </tr>
                                     </tfoot>
@@ -305,6 +307,14 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <td><?php echo $dat['precio_venta'] ?></td>
                                             <td><?php echo $dat['categoria'] ?></td>
                                             <td><?php echo $dat['descripcion'] ?></td>
+                                            <td>
+                                            <div class="text-center">
+                                            <div class="btn-group">
+                                                <button class=" btn btn-primary btbEditar">Editar</button>
+                                                <button class=" btn btn-danger btnBorrar">Borrar</button>
+                                            </div>
+
+                                            </td>
                                         </tr>
                                         
                                         <?php

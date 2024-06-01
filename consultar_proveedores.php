@@ -274,6 +274,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <th>Telefono</th>
                                             <th>Direccion</th>
                                             <th>Correo</th>
+                                            <th>Acciones</th>
                                             
                                         </tr>
                                     </thead>
@@ -284,6 +285,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <th>Telefono</th>
                                             <th>Direccion</th>
                                             <th>Correo</th>
+                                            <th>Acciones</th>
                                             
 
                                         </tr>
@@ -298,6 +300,16 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <td><?php echo $dat['telefono'] ?></td>
                                             <td><?php echo $dat['direccion'] ?></td>
                                             <td><?php echo $dat['correo'] ?></td>
+                                            <td>
+                                            <div class="text-center">
+                                            <div class="btn-group">
+                                                <button class=" btn btn-primary btbEditar">Editar</button>
+                                                <button class=" btn btn-danger btnBorrar">Borrar</button>
+                                            </div>
+                                            </div>
+
+
+                                            </td>
                                             
                                         </tr>
                                         
