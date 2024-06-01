@@ -64,8 +64,8 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="consultar_productos.php">consultar productos</a>
-                        <a class="collapse-item" href="agregar_producto.php">agregar producto</a>
+                        <a class="collapse-item" href="consultar_productos.php">Consultar productos</a>
+                        <a class="collapse-item" href="agregar_producto.php">Agregar producto</a>
                     </div>
                 </div>
             </li>
@@ -80,21 +80,21 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="consultar_proveedores.php">consultar proveedores</a>
-                        <a class="collapse-item" href="agregar_proveedor.php">agregar proveedor</a>
+                        <a class="collapse-item" href="consultar_proveedores.php">Consultar proveedores</a>
+                        <a class="collapse-item" href="agregar_proveedor.php">Agregar proveedor</a>
                         
                     </div>
                 </div>
             </li>
 
-            <!-- Nav Item - inventario -->
+            <!-- Nav Item - Inventario -->
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="bi bi-clipboard2-check"></i>
                     <span>Inventario</span></a>
             </li>
 
-            <!-- Nav Item - empleados -->
+            <!-- Nav Item - Empleados -->
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="bi bi-person-fill-lock"></i>
@@ -108,7 +108,7 @@
                     <span>Venta</span></a>
             </li>
             
-             <!-- Nav Item - cliente -->
+             <!-- Nav Item - Cliente -->
              <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="bi bi-people-fill"></i>
