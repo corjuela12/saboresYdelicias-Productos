@@ -89,9 +89,19 @@
 
             <!-- Nav Item - Inventario -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-clipboard2-check"></i>
-                    <span>Inventario</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInventario"
+                    aria-expanded="true" aria-controls="collapseInventario">
+                    <i class="bi bi-person-plus-fill"></i>
+                    <span>Inventario</span>
+                </a>
+                <div id="collapseInventario" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="consultar_inventario.html">Consultar Inventario</a>
+                        <a class="collapse-item" href="agregar_proveedor.php">Agregar Inventario</a>
+                        
+                    </div>
+                </div>
             </li>
 
             <!-- Nav Item - Empleados -->
