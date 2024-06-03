@@ -3,7 +3,7 @@ include_once  "BD/conexion.php";
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id_producto, nombre, marca, precio_compra, img, precio_venta,categoria, descripcion FROM producto";
+$consulta = "SELECT id_proveedor, nombre, telefono, direccion, correo FROM proveedor";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -21,7 +21,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Consultar Productos</title>
+    <title>Consultar Proveedores</title>
 
     <!-- Custom fonts for this template -->
     <link href="icons/font/bootstrap-icons.min.css" rel="stylesheet" type="text/css">
@@ -112,15 +112,6 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <a class="nav-link" href="#">
                     <i class="bi bi-person-fill-lock"></i>
                     <span>Empleados</span></a>
-                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <!--<h6 class="collapse-header">Custom Utilities:</h6>-->
-                        <a class="collapse-item" href="utilities-color.html">Crear Empleado</a>
-                        <a class="collapse-item" href="utilities-border.html">Consultar Empleado</a>
-                        <a class="collapse-item" href="utilities-animation.html">Modificar Empleado</a>
-                    </div>
-                </div>
             </li>
 
             <!-- Nav Item - venta -->
@@ -149,14 +140,6 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <a class="nav-link" href="#">
                     <i class="bi bi-calendar3"></i>
                     <span>Tienda</span></a>
-                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <!--<h6 class="collapse-header">Custom Components:</h6>-->
-                        <a class="collapse-item" href="">Crear tienda</a>
-                        <a class="collapse-item" href="">Consultar Tienda</a>
-                        <a class="collapse-item" href="">Modificar Tienda</a>
-                    </div>
-                </div>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -273,7 +256,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h2 class="m-0 font-weight-bold text-primary text-center">Consultar Productos</h1>
+                    <h2 class="m-0 font-weight-bold text-primary text-center">Consultar Proveedores</h1>
                     
 
                     <!-- DataTales Example -->
@@ -286,28 +269,24 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="text-center">
                                         <tr>
-                                            <th>Id producto</th>
+                                            <th>Id Proveedor</th>
                                             <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
-                                            <th>Imagen</th>
-                                            <th>Precio venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
+                                            <th>Telefono</th>
+                                            <th>Direccion</th>
+                                            <th>Correo</th>
                                             <th>Acciones</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tfoot class="text-center">
                                         <tr>
-                                            <th>Id producto</th>
+                                            <th>Id Proveedor</th>
                                             <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
-                                            <th>Imagen</th>
-                                            <th>Precio Venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
+                                            <th>Telefono</th>
+                                            <th>Direccion</th>
+                                            <th>Correo</th>
                                             <th>Acciones</th>
+                                            
 
                                         </tr>
                                     </tfoot>
@@ -316,22 +295,22 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                         foreach($data as $dat) {
                                         ?>
                                         <tr class="text-center">
-                                            <td><?php echo $dat['id_producto'] ?></td>
+                                            <td><?php echo $dat['id_proveedor'] ?></td>
                                             <td><?php echo $dat['nombre'] ?></td>
-                                            <td><?php echo $dat['marca'] ?></td>
-                                            <td><?php echo $dat['precio_compra'] ?></td>
-                                            <td><img src="<?php echo $dat['img'] ?>"> </img></td>
-                                            <td><?php echo $dat['precio_venta'] ?></td>
-                                            <td><?php echo $dat['categoria'] ?></td>
-                                            <td><?php echo $dat['descripcion'] ?></td>
+                                            <td><?php echo $dat['telefono'] ?></td>
+                                            <td><?php echo $dat['direccion'] ?></td>
+                                            <td><?php echo $dat['correo'] ?></td>
                                             <td>
                                             <div class="text-center">
                                             <div class="btn-group">
                                                 <button class=" btn btn-primary btbEditar">Editar</button>
                                                 <button class=" btn btn-danger btnBorrar">Borrar</button>
                                             </div>
+                                            </div>
+
 
                                             </td>
+                                            
                                         </tr>
                                         
                                         <?php
