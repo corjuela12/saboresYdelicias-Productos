@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Consultar Productos</title>
+    <title>Agregar proveedor</title>
 
     <!-- Custom fonts for this template -->
     <link href="icons/font/bootstrap-icons.min.css" rel="stylesheet" type="text/css">
