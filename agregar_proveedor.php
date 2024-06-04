@@ -1,3 +1,27 @@
+<?php
+include_once  "BD/conexionMYSQLI.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+    $Nombre = $_POST['nombre'];
+    $Telefono = $_POST['telefono'];
+    $Direccion = $_POST['direccion'];
+    $Correo = $_POST['correo'];
+
+
+    if (!empty($Nombre) && !empty($Telefono) && !empty($Direccion) && !empty($Correo)) {
+        
+        $consulta = "INSERT INTO proveedor (nombre, telefono, direccion, correo) VALUES ('$Nombre', '$Telefono', '$Direccion', '$Correo')";
+        
+        if ($enlace->query($consulta) === TRUE) {
+            $mensaje = "Proveedor insertado correctamente";
+        } else {
+            $mensaje = "Error al insertar proveedor: " . $enlace->error;
+        }
+    }
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +33,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Agregar proveedor</title>
+    <title>Agregar Proveedor</title>
 
     <!-- Custom fonts for this template -->
     <link href="icons/font/bootstrap-icons.min.css" rel="stylesheet" type="text/css">
@@ -23,7 +47,7 @@
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="css/personalizado.css">
 </head>
 
 <body id="page-top">
@@ -244,76 +268,46 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h2 class="m-0 font-weight-bold text-primary text-center">Consultar Productos</h1>
-                    
+                <h2 class="m-0 font-weight-bold text-primary text-center">Agregar Proveedor</h1>    
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <!--<div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>-->
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead class="text-center">
-                                        <tr>
-                                            <th>Id producto</th>
-                                            <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
-                                            <th>Imagen</th>
-                                            <th>Precio venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot class="text-center">
-                                        <tr>
-                                            <th>Id producto</th>
-                                            <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
-                                            <th>Imagen</th>
-                                            <th>Precio Venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
-                                            <th>Acciones</th>
-
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php
-                                        foreach($data as $dat) {
-                                        ?>
-                                        <tr class="text-center">
-                                            <td><?php echo $dat['id_producto'] ?></td>
-                                            <td><?php echo $dat['nombre'] ?></td>
-                                            <td><?php echo $dat['marca'] ?></td>
-                                            <td><?php echo $dat['precio_compra'] ?></td>
-                                            <td><img src="<?php echo $dat['img'] ?>"> </img></td>
-                                            <td><?php echo $dat['precio_venta'] ?></td>
-                                            <td><?php echo $dat['categoria'] ?></td>
-                                            <td><?php echo $dat['descripcion'] ?></td>
-                                            <td>
-                                            <div class="text-center">
-                                            <div class="btn-group">
-                                                <button class=" btn btn-primary btbEditar">Editar</button>
-                                                <button class=" btn btn-danger btnBorrar">Borrar</button>
-                                            </div>
-
-                                            </td>
-                                        </tr>
-                                        
-                                        <?php
-                                        }
-                                        ?>   
-                                    </tbody>
-                                </table>
+                        <div class="container mt-5">
+                            <div class="card .bg-gradient-success" style="max-width: 450px; margin: auto;">
+                                <div class="card-header text-center">
+                                    <h5 id="exampleModalLabel" class="mb-0 font-weight-bold">Ingrese Proveedor</h5>
+                                </div>
+                                <form id="formProductos" action="" method="post" class="card-body">
+                                    <div class="form-group">
+                                        <label for="nombre" class="col-form-label">Nombre:</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefono" class="col-form-label">Telefono:</label>
+                                        <input type="number" class="form-control" id="telefono" name="telefono" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="direccion" class="col-form-label">Direccion:</label>
+                                        <input type="text" class="form-control" id="direccion" name="direccion" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="correo" class="col-form-label">Correo:</label>
+                                        <input type="email" class="form-control" id="correo" name="correo" required>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="reset" class="btn btn-secondary mr-2">Restablecer</button>
+                                        <button type="submit" id="btnGuardar" class="btn btn-success" name="enviar">Guardar</button>
+                                    </div>
+                                </form>
+                                <?php if (!empty($mensaje)) : ?>
+                                    <div class="alert alert-info mt-3 alert-dismissible fade show" role="alert">
+                                        <?php echo $mensaje; ?>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                <?php endif; ?>
                             </div>
                         </div>
-                    </div>
-
+                    
                 </div>
                 <!-- /.container-fluid -->
 

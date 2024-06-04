@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbnombre = 'new';
+$dbnombre = 'saboresydelicias';
 $usuario = 'root';
 $contraseña = '';
 
