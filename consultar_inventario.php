@@ -298,7 +298,6 @@ $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
                         <div class="card-body">
                             <div class="table-responsive">
                                 
-                            
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="text-center">
                                         <tr>
@@ -318,29 +317,25 @@ $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
                                             <th>Acciones</th>
                                         </tr>
                                     </tfoot>
-                                    <tbody>
-                                        <?php
-                                        foreach($data as $dat) {
-                                        ?>
-                                        <tr class="text-center">
-                                            <td><?php echo $dat['id_producto'] ?></td>
-                                            <td><?php echo $dat['nombre'] ?></td>
-                                            <td><img src="<?php echo $dat['img'] ?>"> </img></td>
-                                            <td><?php echo $dat['cantidad'] ?></td>
-                                            <td>
-                                            <div class="text-center">
-                                            <div class="btn-group">
-                                                <button class=" btn btn-primary btbEditar">Editar</button>
-                                                <button class=" btn btn-danger btnBorrar">Borrar</button>
-                                            </div>
-
-                                            </td>
-                                        </tr>
-                                        
-                                        <?php
+                                    
+                                    <?php
+                                        foreach ($data as $dat) {
+                                            echo "<tr class='text-center'>";
+                                            echo "<td>" . $dat['id_producto'] . "</td>";
+                                            echo "<td>" . $dat['nombre'] . "</td>";
+                                            echo "<td><img src='" . $dat['img'] . "'></td>";
+                                            echo "<td>" . $dat['cantidad'] . "</td>";
+                                            echo "<td>
+                                                    <div class='text-center'>
+                                                        <div class='btn-group'>
+                                                            <button class='btn btn-primary btbEditar'>Editar</button>
+                                                        </div>
+                                                    </div>
+                                                </td>";
+                                            echo "</tr>";
                                         }
-                                        ?>   
-                                    </tbody>
+                                    ?>
+  
                                 </table>
                             </div>
                         </div>
