@@ -120,10 +120,19 @@
             
              <!-- Nav Item - Cliente -->
              <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-people-fill"></i>
-                    <span>Clientes</span></a>
-            </li>
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseClientes"
+        aria-expanded="true" aria-controls="collapseClientes">
+        <i class="bi bi-people-fill"></i>
+        <span>Clientes</span>
+    </a>
+    <div id="collapseClientes" class="collapse" aria-labelledby="headingClientes" data-parent="#accordionSidebar">
+    <div class="bg-white py-2 collapse-inner rounded">
+        <a class="collapse-item" href="agregar_cliente.php">Agregar Cliente</a>
+        <a class="collapse-item" href="consultar_clientes.php">Consultar Clientes</a>
+        <a class="collapse-item" href="informe_clientes.php">Generar Informe</a>
+    </div>
+</div>
+</li>
 
             <!-- Nav Item - pedidos -->
             <li class="nav-item">
@@ -254,4 +263,6 @@
 
                 </nav>
                 <!-- End of Topbar -->
+
+
 
