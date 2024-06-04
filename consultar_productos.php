@@ -112,15 +112,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <a class="nav-link" href="#">
                     <i class="bi bi-person-fill-lock"></i>
                     <span>Empleados</span></a>
-                    <div id="collapseEmployees" class="collapse" aria-labelledby="headingEmployees"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <!--<h6 class="collapse-header">Custom Utilities:</h6>-->
-                        <a class="collapse-item" href="#">Crear Empleado</a>
-                        <a class="collapse-item" href="#">Consultar Empleado</a>
-                        <a class="collapse-item" href="#">Modificar Empleado</a>
-                    </div>
-                </div>
+                    
             </li>
 
             <!-- Nav Item - venta -->
