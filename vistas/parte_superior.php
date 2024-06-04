@@ -128,6 +128,12 @@
                     <i class="bi bi-calendar3"></i>
                     <span>Tienda</span></a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="Reportes.php">
+                <i class="bi bi-chat-left-dots-fill"></i>
+                    <span>Reportes</span></a>
+            </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
