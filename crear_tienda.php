@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Consultar Productos</title>
+    <title>Crear Tienda</title>
 
     <!-- Custom fonts for this template -->
     <link href="icons/font/bootstrap-icons.min.css" rel="stylesheet" type="text/css">
@@ -21,8 +21,10 @@
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
+
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="C:/xampp/htdocs/saboresYdelicias-Productos/css/crear-tienda.css" rel="stylesheet">
 
 </head>
 
@@ -54,80 +56,31 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider">
-
-
-            <!-- Nav Item - productos-- Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-                    aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="bi bi-cake2-fill"></i>
-                    <span>Productos</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="consultar_productos.php">Consultar productos</a>
-                        <a class="collapse-item" href="agregar_producto.php">Agregar producto</a>
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - proveedores-- Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="bi bi-person-plus-fill"></i>
-                    <span>Proveedores</span>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                    data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="consultar_proveedores.php">Consultar proveedores</a>
-                        <a class="collapse-item" href="agregar_proveedor.php">Agregar proveedor</a>
-                        
-                    </div>
-                </div>
-            </li>
-
-            <!-- Nav Item - Inventario -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-clipboard2-check"></i>
-                    <span>Inventario</span></a>
-            </li>
-
             <!-- Nav Item - Empleados -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-person-fill-lock"></i>
+<!--            <li class="nav-item">
+                <a class="nav-link" href="index.php" data-toggle="collapse" data-target="#empleado-collapse-Two">
+                    <i class="empleado_nav-item"></i>
                     <span>Empleados</span></a>
+                <div id="empleado-collapse-Two" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="crear_empleado.php">Crear Empleado</a>
+                        <a class="collapse-item" href="consultar_empleado.php">Consultar Empleado</a>
+                    </div>
+                </div>
             </li>
-
-            <!-- Nav Item - venta -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-currency-dollar"></i>
-                    <span>Venta</span></a>
-            </li>
-            
-             <!-- Nav Item - Cliente -->
-             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-people-fill"></i>
-                    <span>Clientes</span></a>
-            </li>
-
-            <!-- Nav Item - pedidos -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-cart-plus"></i>
-                    <span>Pedidos</span></a>
-            </li>
-
+-->
             <!-- Nav Item - tienda -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-calendar3"></i>
+                <a class="nav-link" href="index.php" data-toggle="collapse" data-target="#tienda-collapse-Two"
+                    aria-expanded="true" aria-controls="tienda-collapse-Two">
+                    <i class="tienda-nav-item"></i>
                     <span>Tienda</span></a>
+                <div id="tienda-collapse-Two" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="crear_tienda.php">Crear Tienda</a>
+                        <a class="collapse-item" href="consultar_tienda.php">Consultar Tienda</a>
+                    </div>
+                </div>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -202,8 +155,6 @@
                             </div>
                         </li>
 
-                    
-
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -212,27 +163,6 @@
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
-                            <!-- Dropdown - User Information -->
-                            <!--<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
-                                </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
-                                </a>
-                            </div>-->
                         </li>
 
                     </ul>
@@ -240,86 +170,74 @@
                 </nav>
                 <!-- End of topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
+<!-- Begin Page Content -->
+<body>
+    <div class="form-container">
+        <h1 class="header-crear_tienda">Crear Tienda</h1>
+        <form action="procesar_formulario.php" method="post">
+            <label for="nombre">Nombre:</label>
+            <input type="text" placeholder="Nombre tienda" id="nombre" name="nombre" required>
+            <label for="email">Direccion:</label>
+            <input type="text" placeholder="Direccion tienda" id="direccion" name="direccion" required>
+            <label for="telefono">Telefono:</label>
+            <input type="text" placeholder="Telefono de contacto" id="telefono" name="telefono" required>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
 
-                    <!-- Page Heading -->
-                    <h2 class="m-0 font-weight-bold text-primary text-center">Consultar Productos</h1>
-                    
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = ""; 
+$dbname = "saboresydelicias";
 
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <!--<div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-                        </div>-->
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead class="text-center">
-                                        <tr>
-                                            <th>Id producto</th>
-                                            <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
-                                            <th>Imagen</th>
-                                            <th>Precio venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
-                                            <th>Acciones</th>
-                                        </tr>
-                                    </thead>
-                                    <tfoot class="text-center">
-                                        <tr>
-                                            <th>Id producto</th>
-                                            <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
-                                            <th>Imagen</th>
-                                            <th>Precio Venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
-                                            <th>Acciones</th>
+// Crear la conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-                                        <?php
-                                        foreach($data as $dat) {
-                                        ?>
-                                        <tr class="text-center">
-                                            <td><?php echo $dat['id_producto'] ?></td>
-                                            <td><?php echo $dat['nombre'] ?></td>
-                                            <td><?php echo $dat['marca'] ?></td>
-                                            <td><?php echo $dat['precio_compra'] ?></td>
-                                            <td><img src="<?php echo $dat['img'] ?>"> </img></td>
-                                            <td><?php echo $dat['precio_venta'] ?></td>
-                                            <td><?php echo $dat['categoria'] ?></td>
-                                            <td><?php echo $dat['descripcion'] ?></td>
-                                            <td>
-                                            <div class="text-center">
-                                            <div class="btn-group">
-                                                <button class=" btn btn-primary btbEditar">Editar</button>
-                                                <button class=" btn btn-danger btnBorrar">Borrar</button>
-                                            </div>
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("La conexión ha fallado: " . $conn->connect_error);
+}
 
-                                            </td>
-                                        </tr>
-                                        
-                                        <?php
-                                        }
-                                        ?>   
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recibir y validar los datos del formulario
+    $nombre = htmlspecialchars($_POST['nombre']);
+    $direccion = htmlspecialchars($_POST['direccion']);
+    $telefono = htmlspecialchars($_POST['telefono']);
 
-                </div>
-                <!-- /.container-fluid -->
+    // Obtener el id_tienda más alto existente
+    $sql = "SELECT MAX(id_tienda) as max_id FROM tienda";
+    $result = $conn->query($sql);
 
-            </div>
-            <!-- End of Main Content -->
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $id_tienda = $row['max_id'] + 1;
+    } else {
+        $id_tienda = 1; // Si no hay registros, comenzamos con 1
+    }
 
+    // Preparar y ejecutar la consulta SQL
+    $sql = "INSERT INTO tienda (id_tienda, nombre, direccion, telefono) VALUES (?, ?, ?, ?)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("isss", $id_tienda, $nombre, $direccion, $telefono);
+
+    if ($stmt->execute()) {
+        echo "Nueva tienda registrada exitosamente";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    // Cerrar la conexión
+    $stmt->close();
+    $conn->close();
+}
+?>
+
+
+</body>
+
+
+<!-- End of Main Content -->
             <!-- Footer -->
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
@@ -342,7 +260,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<!--  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -360,6 +278,7 @@
             </div>
         </div>
     </div>
+-->
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
