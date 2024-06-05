@@ -143,9 +143,17 @@
 
             <!-- Nav Item - tienda -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-calendar3"></i>
-                    <span>Tienda</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-tienda">
+                    <i class="bi bi-calendar3"></i> <!--Icono del calendario al lado de la palabra tienda-->
+                    <span>Tienda</span>
+                </a>
+                    <div id="collapse-tienda" class="collapse" aria-labelledby="heading-tienda" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="crear_tienda.php">Agregar Tienda</a>
+                            <a class="collapse-item" href="consultar_tienda.php">Consultar Tienda</a>
+                            <a class="collapse-item" href="editar_tienda.php">Editar Tienda</a>
+                        </div>
+                    </div>
             </li>
 
             <li class="nav-item">
