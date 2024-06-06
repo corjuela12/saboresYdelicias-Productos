@@ -106,9 +106,17 @@
 
             <!-- Nav Item - Empleados -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse-empleado">
                     <i class="bi bi-person-fill-lock"></i>
-                    <span>Empleados</span></a>
+                    <span>Empleados</span>
+                </a>
+                <div id="collapse-empleado" class="collapse" aria-labelledby="heading-empleado" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="crear_empleado.php">Agregar Empleado</a>
+                            <a class="collapse-item" href="consultar_empleado.php">Consultar Empleado</a>
+                            <a class="collapse-item" href="editar_empleado.php">Editar Empleado</a>
+                        </div>
+                    </div>
             </li>
 
             <!-- Nav Item - venta -->
