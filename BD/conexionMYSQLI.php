@@ -1,8 +1,8 @@
 <?php
 
 $host = 'localhost';
-$dbnombre = 'new';
-$usuario = 'root';
+$dbnombre = 'proyecto';
+$usuario = 'root@localhost';
 $contraseña = '';
 
 $enlace = new mysqli($host, $usuario, $contraseña, $dbnombre);

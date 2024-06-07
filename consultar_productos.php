@@ -1,5 +1,5 @@
 <?php
-include_once  "BD/conexion.php";
+include_once  "BD/conexionPDO.php";
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
