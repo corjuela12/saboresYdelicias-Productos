@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         VALUES ('$Idproducto', '$Nombre', '$Marca', '$Preciocompra', '$Imagen', '$Precioventa', '$Categoria', '$Descripcion')";
         
         if ($enlace->query($consulta) === TRUE) {
-            $mensaje = "Proveedor insertado correctamente";
+            $mensaje = "Producto insertado correctamente";
         } else {
             $mensaje = "Error al insertar proveedor: " . $enlace->error;
         }

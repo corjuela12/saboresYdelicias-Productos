@@ -106,9 +106,17 @@
 
             <!-- Nav Item - Empleados -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapse-empleado">
                     <i class="bi bi-person-fill-lock"></i>
-                    <span>Empleados</span></a>
+                    <span>Empleados</span>
+                </a>
+                <div id="collapse-empleado" class="collapse" aria-labelledby="heading-empleado" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="crear_empleado.php">Agregar Empleado</a>
+                            <a class="collapse-item" href="consultar_empleado.php">Consultar Empleado</a>
+                            <a class="collapse-item" href="editar_empleado.php">Editar Empleado</a>
+                        </div>
+                    </div>
             </li>
 
             <!-- Nav Item - venta -->
@@ -129,6 +137,7 @@
     <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item" href="agregar_cliente.php">Agregar Cliente</a>
         <a class="collapse-item" href="consultar_clientes.php">Consultar Clientes</a>
+        <a class="collapse-item" href="informe_consumos.php">Informe de Consumos</a> 
         <a class="collapse-item" href="informe_clientes.php">Generar Informe</a>
     </div>
 </div>
@@ -143,9 +152,17 @@
 
             <!-- Nav Item - tienda -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-calendar3"></i>
-                    <span>Tienda</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse-tienda">
+                    <i class="bi bi-calendar3"></i> <!--Icono del calendario al lado de la palabra tienda-->
+                    <span>Tienda</span>
+                </a>
+                    <div id="collapse-tienda" class="collapse" aria-labelledby="heading-tienda" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <a class="collapse-item" href="crear_tienda.php">Agregar Tienda</a>
+                            <a class="collapse-item" href="consultar_tienda.php">Consultar Tienda</a>
+                            <a class="collapse-item" href="editar_tienda.php">Editar Tienda</a>
+                        </div>
+                    </div>
             </li>
 
             <li class="nav-item">
@@ -153,6 +170,8 @@
                 <i class="bi bi-chat-left-dots-fill"></i>
                     <span>Reportes</span></a>
             </li>
+
+            
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
@@ -237,15 +256,15 @@
                                     src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
-                            <!--<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Profile
+                                    Perfil
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Settings
+                                    Configuracion
                                 </a>
                                 <a class="dropdown-item" href="#">
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -254,9 +273,9 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Salir
                                 </a>
-                            </div>-->
+                            </div>
                         </li>
 
                     </ul>
