@@ -3,7 +3,7 @@
 $host = 'localhost';
 
 $dbnombre = 'proyecto';
-$usuario = 'root@localhost';
+$usuario = 'root';
 
 $contraseña = '';
 
