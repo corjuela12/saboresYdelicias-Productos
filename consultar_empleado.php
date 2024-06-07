@@ -113,9 +113,9 @@ function limpiarDatos($data) {
                             <td><?php echo $empleado['nombre']; ?></td>
                             <td><?php echo $empleado['apellido']; ?></td>
                             <td><?php echo $empleado['telefono']; ?></td>
-                            <td><?php echo $empleado['e-mail']; ?></td>
+                            <td><?php echo $empleado['email']; ?></td>
                             <td><?php echo $empleado['rol']; ?></td>
-                            <td><?php echo $empleado['id_tienda']; ?></td>
+                            <td><?php echo $empleado['tienda_id_tienda']; ?></td>
                         </tr>
                     <?php } ?>
                 <?php } else { ?>

@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = limpiarDatos($_POST["nombre"]);
     $apellido = limpiarDatos($_POST["apellido"]);
     $telefono = limpiarDatos($_POST["telefono"]);
-    $correo = limpiarDatos($_POST["e-mail"]);
+    $correo = limpiarDatos($_POST["email"]);
     $rol = limpiarDatos($_POST["rol"]);
     $tienda = limpiarDatos($_POST["tienda_id"]);
 
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Todos los campos son obligatorios.";
     } else {
         // Preparar la consulta SQL
-        $sql = "INSERT INTO empleado (nombre,apellido,telefono,e-mail,rol,tienda) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO empleado (nombre,apellido,telefono,email,rol,tienda) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         // Preparar la consulta
         $stmt = $conn->prepare($sql);
@@ -90,8 +90,8 @@ function limpiarDatos($data) {
                 <input type="text" class="form-control" id="telefono" name="telefono" required>
             </div>
             <div class="form-group">
-                <label for="e-mail">Correo:</label>
-                <input type="email" class="form-control" id="e-mail" name="e-mail" required>
+                <label for="email">Correo:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="rol">Rol:</label>
