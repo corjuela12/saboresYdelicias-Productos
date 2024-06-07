@@ -2,8 +2,8 @@
 
 $host = 'localhost';
 
-$dbnombre = 'proyecto';
-$usuario = 'root@localhost';
+$dbnombre = 'saboresydelicias';
+$usuario = 'root';
 
 $contraseña = '';
 

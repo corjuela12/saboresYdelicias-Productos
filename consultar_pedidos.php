@@ -12,6 +12,7 @@ $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
 
+
 ?>
 
 <!DOCTYPE html>
@@ -518,25 +519,25 @@ $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
                                     ?>
                                     <?php
                                     $consul = "SELECT 
-                                    pedido.cantidad, 
-                                    producto.img, 
-                                    producto.nombre, 
-                                    cliente.id_cliente,
-                                    pedido.producto_id_producto
-                                FROM 
-                                    pedido
-                                LEFT JOIN 
-                                    cliente 
-                                ON 
-                                    pedido.cliente_id_cliente = cliente.id_cliente 
-                                LEFT JOIN 
-                                    producto 
-                                ON 
-                                    pedido.producto_id_producto = producto.id_producto
-                                WHERE 
-                                    pedido.id_pedido = '$id';  -- Cambia esta fecha a la que necesites
-                            ";
-                    
+                pedido.cantidad, 
+                producto.img, 
+                producto.nombre, 
+                cliente.id_cliente,
+                pedido.producto_id_producto
+            FROM 
+                pedido
+            LEFT JOIN 
+                cliente 
+            ON 
+                pedido.cliente_id_cliente = cliente.id_cliente 
+            LEFT JOIN 
+                producto 
+            ON 
+                pedido.producto_id_producto = producto.id_producto
+            WHERE 
+                pedido.id_pedido = '$id';  -- Cambia esta fecha a la que necesites
+        ";
+
                                     $resul = $conexion->prepare($consul);
                                     $resul->execute();
                                     $info = $resul->fetchAll(PDO::FETCH_ASSOC);
