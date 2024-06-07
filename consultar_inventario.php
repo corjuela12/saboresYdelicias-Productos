@@ -1,3 +1,17 @@
+<?php
+include_once "BD/conexionPDO.php";
+$objeto = new Conexion();
+$conexion = $objeto->Conectar();
+
+$consulta = "SELECT producto.id_producto, producto.nombre, producto.img, inventario.cantidad  
+                FROM producto 
+                LEFT JOIN inventario 
+                ON producto.id_producto = inventario.producto_id_producto";
+$resultado = $conexion->prepare($consulta);
+$resultado->execute();
+$data = $resultado->fetchAll(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -219,7 +233,7 @@
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
                                         <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Search"
+                                            placeholder="Search for..." aria-label="buscar"
                                             aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
@@ -273,7 +287,7 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h2 class="m-0 font-weight-bold text-primary text-center">Consultar Productos</h1>
+                    <h2 class="m-0 font-weight-bold text-primary text-center">Consultar Inventario</h1>
                     
 
                     <!-- DataTales Example -->
@@ -283,17 +297,14 @@
                         </div>-->
                         <div class="card-body">
                             <div class="table-responsive">
+                                
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead class="text-center">
                                         <tr>
                                             <th>Id producto</th>
                                             <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
                                             <th>Imagen</th>
-                                            <th>Precio venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
+                                            <th>Cantidad</th>
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
@@ -301,43 +312,30 @@
                                         <tr>
                                             <th>Id producto</th>
                                             <th>Nombre</th>
-                                            <th>Marca</th>
-                                            <th>Precio compra</th>
                                             <th>Imagen</th>
-                                            <th>Precio Venta</th>
-                                            <th>Categoria</th>
-                                            <th>Descripción</th>
+                                            <th>Cantidad</th>
                                             <th>Acciones</th>
-
                                         </tr>
                                     </tfoot>
-                                    <tbody>
-                                        <?php
-                                        foreach($data as $dat) {
-                                        ?>
-                                        <tr class="text-center">
-                                            <td><?php echo $dat['id_producto'] ?></td>
-                                            <td><?php echo $dat['nombre'] ?></td>
-                                            <td><?php echo $dat['marca'] ?></td>
-                                            <td><?php echo $dat['precio_compra'] ?></td>
-                                            <td><img src="<?php echo $dat['img'] ?>"> </img></td>
-                                            <td><?php echo $dat['precio_venta'] ?></td>
-                                            <td><?php echo $dat['categoria'] ?></td>
-                                            <td><?php echo $dat['descripcion'] ?></td>
-                                            <td>
-                                            <div class="text-center">
-                                            <div class="btn-group">
-                                                <button class=" btn btn-primary btbEditar">Editar</button>
-                                                <button class=" btn btn-danger btnBorrar">Borrar</button>
-                                            </div>
-
-                                            </td>
-                                        </tr>
-                                        
-                                        <?php
+                                    
+                                    <?php
+                                        foreach ($data as $dat) {
+                                            echo "<tr class='text-center'>";
+                                            echo "<td>" . $dat['id_producto'] . "</td>";
+                                            echo "<td>" . $dat['nombre'] . "</td>";
+                                            echo "<td><img src='" . $dat['img'] . "'></td>";
+                                            echo "<td>" . $dat['cantidad'] . "</td>";
+                                            echo "<td>
+                                                    <div class='text-center'>
+                                                        <div class='btn-group'>
+                                                            <button class='btn btn-primary btbEditar'>Editar</button>
+                                                        </div>
+                                                    </div>
+                                                </td>";
+                                            echo "</tr>";
                                         }
-                                        ?>   
-                                    </tbody>
+                                    ?>
+  
                                 </table>
                             </div>
                         </div>
