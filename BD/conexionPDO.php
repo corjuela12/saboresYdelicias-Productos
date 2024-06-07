@@ -16,4 +16,16 @@ class conexion {
         }
 
     }
+    public static function Actualizar($consulta){
+        $conexion = self::Conectar();
+        
+        try {
+            $stmt = $conexion->prepare($consulta);
+            $stmt->execute();
+            return true; // La actualización fue exitosa
+        } catch (Exception $e) {
+            return false; // Hubo un error en la actualización
+        }
+    }
 }
+
