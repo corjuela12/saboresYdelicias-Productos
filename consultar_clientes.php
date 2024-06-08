@@ -14,7 +14,6 @@ $searchTerm = isset($_POST['search']) ? $_POST['search'] : '';
 
 $sql = "SELECT * FROM cliente WHERE nombre LIKE '%$searchTerm%' OR apellido LIKE '%$searchTerm%' OR correo LIKE '%$searchTerm%'";
 $result = $conn->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +22,6 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consultar Clientes</title>
-    <link rel="stylesheet" href="path_to_your_css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -66,7 +64,7 @@ $result = $conn->query($sql);
                             echo "<td>" . $row["telefono"] . "</td>";
                             echo "<td>" . $row["cedula"] . "</td>";
                             echo "<td>" . $row["area"] . "</td>";
-                            echo "<td>" . $row["empleado_id_empleado"] . "</td>";
+                            echo "<td>" . $row["empleado_id_empleado1"] . "</td>";
                             echo "<td>";
                             echo '<div class="btn-group" role="group">';
                             echo '<a href="editar_cliente.php?id=' . $row["id_cliente"] . '" class="btn btn-primary">Editar</a>';
