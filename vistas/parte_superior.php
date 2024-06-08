@@ -98,7 +98,7 @@
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="consultar_inventario.php">Consultar Inventario</a>
-                        <a class="collapse-item" href="#">Agregar Inventario</a>
+                        
                         
                     </div>
                 </div>
@@ -145,10 +145,21 @@
 
             <!-- Nav Item - pedidos -->
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="bi bi-cart-plus"></i>
-                    <span>Pedidos</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePedido"
+                    aria-expanded="true" aria-controls="collapsePedido">
+                    <i class="bi bi-person-plus-fill"></i>
+                    <span>Pedidos</span>
+                </a>
+                <div id="collapsePedido" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="consultar_pedidos.php">Consultar Pedidos</a>
+                        
+                        
+                    </div>
+                </div>
             </li>
+           
 
             <!-- Nav Item - tienda -->
             <li class="nav-item">
