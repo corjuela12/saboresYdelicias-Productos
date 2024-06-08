@@ -1,5 +1,5 @@
 <?php
-// Este código debe estar al inicio del archivo para manejar la inserción de datos
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $servername = "localhost";
@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Cliente</title>
-    <link rel="stylesheet" href="path_to_your_css_file.css"> <!-- Asegúrate de enlazar correctamente tu archivo CSS -->
+    <link rel="stylesheet" href="path_to_your_css_file.css"> 
 </head>
 <body>
     <?php include('vistas/parte_superior.php'); ?>
