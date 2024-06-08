@@ -102,6 +102,7 @@ function limpiarDatos($data) {
                     <th>Telefono</th>
                     <th>Correo</th>
                     <th>Rol</th>
+                    <th>Clave</th>
                     <th>Id tienda</th>
                 </tr>
             </thead>
@@ -115,6 +116,7 @@ function limpiarDatos($data) {
                             <td><?php echo $empleado['telefono']; ?></td>
                             <td><?php echo $empleado['email']; ?></td>
                             <td><?php echo $empleado['rol']; ?></td>
+                            <td><?php echo $empleado['contraseña']; ?></td>
                             <td><?php echo $empleado['tienda_id_tienda']; ?></td>
                         </tr>
                     <?php } ?>

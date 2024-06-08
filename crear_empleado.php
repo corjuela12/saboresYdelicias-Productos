@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefono = limpiarDatos($_POST["telefono"]);
     $correo = limpiarDatos($_POST["email"]);
     $rol = limpiarDatos($_POST["rol"]);
+    $clave = limpiarDatos($_POST["contraseña"]);
     $tienda = limpiarDatos($_POST["tienda_id_tienda"]);
 
     // Validar datos
@@ -30,12 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['error_message'] = "Todos los campos son obligatorios.";
     } else {
         // Preparar la consulta SQL
-        $sql = "INSERT INTO empleado (nombre, apellido, telefono, email, rol, tienda_id_tienda) VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO empleado (nombre, apellido, telefono, email, rol, contraseña, tienda_id_tienda) VALUES (?, ?, ?, ?, ?, ?)";
 
         // Preparar la consulta
         if ($stmt = $conn->prepare($sql)) {
             // Vincular parámetros
-            $stmt->bind_param("sssssi", $nombre, $apellido, $telefono, $correo, $rol, $tienda);
+            $stmt->bind_param("sssssi", $nombre, $apellido, $telefono, $correo, $rol,$clave,$tienda);
 
             // Ejecutar la consulta
             if ($stmt->execute()) {
@@ -102,6 +103,10 @@ function limpiarDatos($data) {
             <div class="form-group">
                 <label for="rol">Rol:</label>
                 <input type="text" class="form-control" id="rol" name="rol" required>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Contraseña:</label>
+                <input type="text" class="form-control" id="contraseña" name="contraseña" required>
             </div>
             <div class="form-group">
                 <label for="tienda_id_tienda">Id Tienda:</label>
