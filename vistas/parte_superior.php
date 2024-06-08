@@ -137,8 +137,7 @@
     <div class="bg-white py-2 collapse-inner rounded">
         <a class="collapse-item" href="agregar_cliente.php">Agregar Cliente</a>
         <a class="collapse-item" href="consultar_clientes.php">Consultar Clientes</a>
-        <a class="collapse-item" href="informe_consumos.php">Informe de Consumos</a> 
-        <a class="collapse-item" href="informe_clientes.php">Generar Informe</a>
+        <a class="collapse-item" href="informe_consumos.php">Informe de Consumos</a>
     </div>
 </div>
 </li>
