@@ -373,9 +373,7 @@ $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
 
-                <div class="modal-footer">
-                    <a class="btn btn-primary" href="consultar_pedidos.php">Confirmar</a>
-                </div>
+                
             </div>
         </div>
     </div>
