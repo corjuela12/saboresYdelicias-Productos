@@ -1,46 +1,73 @@
-<?php
-// Conexión a la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "saborydelicia";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe de Clientes</title>
+    <link rel="stylesheet" href="path_to_your_css">
+</head>
+<body>
+    <?php include 'vistas/parte_superior.php'; ?>
+    
+    <div class="container mt-5">
+        <h1>Informe de Clientes</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Total Consumido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    require_once 'BD/conexionPDO.php';
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+                    try {
+                        $conn = conexion::Conectar();
+                        if ($conn) {
+                            echo "Conexión exitosa.<br>";
+                        } else {
+                            echo "Error en la conexión.<br>";
+                        }
 
-if ($conn->connect_error) {
-    die("Conexión fallida: " . $conn->connect_error);
-}
+                        $sql = "SELECT c.id_cliente, c.nombre, c.apellido, SUM(p.`valor total`) AS total_consumido 
+                                FROM cliente c 
+                                JOIN pedido p ON c.id_cliente = p.cliente_id_cliente 
+                                GROUP BY c.id_cliente, c.nombre, c.apellido";
 
-// Consulta SQL para obtener los datos de los clientes
-$sql = "SELECT * FROM cliente";
-$result = $conn->query($sql);
+                        $stmt = $conn->prepare($sql);
+                        $stmt->execute();
 
-if ($result->num_rows > 0) {
-    // Crear un archivo CSV y agregar los datos
-    $filename = "clientes_informe.csv";
-    $file = fopen($filename, "w");
+                        if ($stmt->rowCount() > 0) {
+                            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                                echo "<tr>";
+                                echo "<td>" . $row["id_cliente"] . "</td>";
+                                echo "<td>" . $row["nombre"] . "</td>";
+                                echo "<td>" . $row["apellido"] . "</td>";
+                                echo "<td>" . $row["total_consumido"] . "</td>";
+                                echo "</tr>";
+                            }
+                        } else {
+                            echo "<tr><td colspan='4'>No se encontraron resultados</td></tr>";
+                        }
 
-    // Agregar los encabezados
-    $headers = array("id_cliente", "nombre", "apellido", "correo", "fecha_registro", "telefono", "cedula", "area", "empleado_id_empleado1");
-    fputcsv($file, $headers);
+                    } catch (Exception $e) {
+                        echo "Error en la consulta: " . $e->getMessage();
+                    }
 
-    // Agregar los datos de los clientes
-    while($row = $result->fetch_assoc()) {
-        fputcsv($file, $row);
-    }
+                    $conn = null;
+                    ?>
+                </tbody>
+            </table>
+        </div>
+        <form action="generar_informe.php" method="post">
+            <button type="submit" class="btn btn-primary">Descargar Informe en PDF</button>
+        </form>
+    </div>
 
-    fclose($file);
-
-    // Descargar el archivo CSV
-    header('Content-Type: application/csv');
-    header('Content-Disposition: attachment; filename="' . $filename . '";');
-    readfile($filename);
-
-    // Eliminar el archivo del servidor después de la descarga
-    unlink($filename);
-} else {
-    echo "No se encontraron registros de clientes.";
-}
-
-$conn->close();
-?>
+    <?php include 'vistas/parte_inferior.php'; ?>
+</body>
+</html>
